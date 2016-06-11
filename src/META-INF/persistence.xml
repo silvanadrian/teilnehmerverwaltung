@@ -5,7 +5,7 @@
 		<class>model.Kurs</class>
 		<class>model.Teilnehmer</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:/Users/silvanadrian/zehnder/Kursverwaltung/db/kursverwaltung.db"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:PROJECT_LOC/db/kursverwaltung.db"/>
 			<property name="javax.persistence.jdbc.user" value=""/>
 			<property name="javax.persistence.jdbc.password" value=""/>
 			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
