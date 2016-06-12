@@ -1,4 +1,4 @@
-package model;
+package ch.zehndersystems.model;
 
 public enum Kursnummer {
 	KD010,
