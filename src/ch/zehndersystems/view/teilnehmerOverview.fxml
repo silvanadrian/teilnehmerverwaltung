@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zehndersystems.view.TeilnehmerOverviewController">   
+<children>
+      <SplitPane dividerPositions="0.5" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <TableView fx:id="teilnehmerTable">
+              <columns>
+                <TableColumn fx:id="firstNameColumn" prefWidth="90.0" text="Vorname" />
+                  <TableColumn fx:id="lastNameColumn" prefWidth="90.0" text="Nachname" />
+                <TableColumn fx:id="emailColumn" prefWidth="200.0" text="E-Mail" />
+              </columns>
+            </TableView>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <AnchorPane prefHeight="298.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <BorderPane prefHeight="505.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <Label prefHeight="20.0" text="Teilnehmer Details" BorderPane.alignment="TOP_LEFT" />
+                           </top>
+                           <center>
+                              <GridPane BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="80.0" minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Vorname" />
+                                    <Label text="E-Mail" GridPane.rowIndex="2" />
+                                    <Label fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1" />
+                                    <Label fx:id="emailLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label text="Nachname" GridPane.rowIndex="1" />
+                                    <Label text="Telefonnummer" GridPane.rowIndex="3" />
+                                    <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="telephoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </center>
+                           <bottom>
+                              <FlowPane>
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#handleEditTeilnehmer" text="Bearbeiten">
+                                       <FlowPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </FlowPane.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#handleNewTeilnehmer" text="Neu">
+                                       <FlowPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </FlowPane.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#handleDeleteTeilnehmer" text="Löschen">
+                                       <FlowPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </FlowPane.margin>
+                                    </Button>
+                                 </children>
+                              </FlowPane>
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
+

@@ -4,14 +4,21 @@ import ch.zehndersystems.model.Teilnehmer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class TeilnehmerEditDialogController {
 	@FXML
-    private TextField nameField;
+    private ComboBox salutation;
+	@FXML
+    private TextField firstnameField;
+	@FXML
+    private TextField lastnameField;
     @FXML
     private TextField emailField;
+    @FXML
+    private TextField telephoneField;
 
     private Stage dialogStage;
     private Teilnehmer teilnehmer;
@@ -33,8 +40,10 @@ public class TeilnehmerEditDialogController {
     public void setTeilnehmer(Teilnehmer teilnehmer) {
         this.teilnehmer = teilnehmer;
 
-        nameField.setText(teilnehmer.getName());
+        firstnameField.setText(teilnehmer.getFirstname());
+        lastnameField.setText(teilnehmer.getLastname());
         emailField.setText(teilnehmer.getEmail());
+        telephoneField.setText(teilnehmer.getTelephone());
     }
 
     public boolean isOkClicked() {
@@ -45,7 +54,9 @@ public class TeilnehmerEditDialogController {
     @FXML
     private void handleOk() {
         if (isInputValid()) {
-            teilnehmer.setName(nameField.getText());
+            teilnehmer.setFirstname(firstnameField.getText());
+            teilnehmer.setLastname(lastnameField.getText());
+            teilnehmer.setTelephone(telephoneField.getText());
             teilnehmer.setEmail(emailField.getText());
 
 
@@ -70,11 +81,17 @@ public class TeilnehmerEditDialogController {
     private boolean isInputValid() {
         String errorMessage = "";
 
-        if (nameField.getText() == null || nameField.getText().length() == 0) {
-            errorMessage += "No valid first name!\n"; 
+        if (firstnameField.getText() == null || firstnameField.getText().length() == 0) {
+            errorMessage += "Kein valider Vorname!\n"; 
+        }
+        if (lastnameField.getText() == null || lastnameField.getText().length() == 0) {
+            errorMessage += "Kein valider Nachname!\n"; 
+        }
+        if (telephoneField.getText() == null || telephoneField.getText().length() == 0) {
+            errorMessage += "Keine valide Telefonnummer!\n"; 
         }
         if (emailField.getText() == null || emailField.getText().length() == 0) {
-            errorMessage += "No valid last name!\n"; 
+            errorMessage += "Keine valide E-Mail Adresse!\n"; 
         }
 
 

@@ -14,12 +14,18 @@ public class TeilnehmerOverviewController {
     @FXML
     private TableColumn<Teilnehmer, String> firstNameColumn;
     @FXML
+    private TableColumn<Teilnehmer, String> lastNameColumn;
+    @FXML
     private TableColumn<Teilnehmer, String> emailColumn;
 
     @FXML
     private Label firstNameLabel;
     @FXML
+    private Label lastNameLabel;
+    @FXML
     private Label emailLabel;
+    @FXML
+    private Label telephoneLabel;
 
 
     private MainApp mainApp;
@@ -30,8 +36,8 @@ public class TeilnehmerOverviewController {
     
     @FXML
     private void initialize() {
-        // Initialize the person table with the two columns.
-        firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
+        firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().getFirstnameProperty());
+        lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().getLastnameProperty());
         emailColumn.setCellValueFactory(cellData -> cellData.getValue().getEmailProperty());
         showTeilnehmerDetails(null);
         
@@ -100,11 +106,15 @@ public class TeilnehmerOverviewController {
     private void showTeilnehmerDetails(Teilnehmer teilnehmer) {
         if (teilnehmer != null) {
             // Fill the labels with info from the person object.
-            firstNameLabel.setText(teilnehmer.getName());
+            firstNameLabel.setText(teilnehmer.getFirstname());
+            lastNameLabel.setText(teilnehmer.getLastname());
+            telephoneLabel.setText(teilnehmer.getTelephone());
             emailLabel.setText(teilnehmer.getEmail());
         } else {
             // Person is null, remove all the text.
             firstNameLabel.setText("");
+            lastNameLabel.setText("");
+            telephoneLabel.setText("");
             emailLabel.setText("");
         }
     }

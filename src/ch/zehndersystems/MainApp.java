@@ -3,6 +3,7 @@ package ch.zehndersystems;
 
 import java.io.IOException;
 
+import ch.zehndersystems.model.Firma;
 import ch.zehndersystems.model.Teilnehmer;
 import ch.zehndersystems.view.TeilnehmerEditDialogController;
 import ch.zehndersystems.view.TeilnehmerOverviewController;
@@ -24,21 +25,21 @@ public class MainApp extends Application {
 
     public MainApp() {
         // Add some sample data
-        teilnehmerData.add(new Teilnehmer("Hans", "Muster"));
-        teilnehmerData.add(new Teilnehmer("Ruth", "Mueller"));
-        teilnehmerData.add(new Teilnehmer("Heinz", "Kurz"));
-        teilnehmerData.add(new Teilnehmer("Cornelia", "Meier"));
-        teilnehmerData.add(new Teilnehmer("Werner", "Meyer"));
-        teilnehmerData.add(new Teilnehmer("Lydia", "Kunz"));
-        teilnehmerData.add(new Teilnehmer("Anna", "Best"));
-        teilnehmerData.add(new Teilnehmer("Stefan", "Meier"));
-        teilnehmerData.add(new Teilnehmer("Martin", "Mueller"));
+        teilnehmerData.add(new Teilnehmer("Hans", "Muster", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+        teilnehmerData.add(new Teilnehmer("Ruth", "Mueller", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+        teilnehmerData.add(new Teilnehmer("Heinz", "Kurz", "0445201212", "hans.muster@bluewin.ch", new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+        teilnehmerData.add(new Teilnehmer("Cornelia", "Meier", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+        teilnehmerData.add(new Teilnehmer("Werner", "Meyer", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+        teilnehmerData.add(new Teilnehmer("Lydia", "Kunz", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+        teilnehmerData.add(new Teilnehmer("Anna", "Best", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+        teilnehmerData.add(new Teilnehmer("Stefan", "Meier", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+        teilnehmerData.add(new Teilnehmer("Martin", "Mueller", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
     }
 	
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Kursverwaltung");
+		this.primaryStage.setTitle("Kursverwaltung Zehnder Systems");
 		
 		initRootLayout();
 		

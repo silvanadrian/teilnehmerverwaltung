@@ -17,7 +17,9 @@ public class Teilnehmer {
 	@Id
 	@GeneratedValue
 	private long id;
-	private StringProperty name;
+	private StringProperty firstname;
+	private StringProperty lastname;
+	private StringProperty telephone;
 	private StringProperty email;
 	@ManyToOne
 	private Firma firma;
@@ -26,24 +28,26 @@ public class Teilnehmer {
 	 * Default Constructor
 	 */
 	public Teilnehmer(){
-		this(null,null);
+		this(null,null,null,null, null);
 	}
 	
-	public Teilnehmer(String name, String email) {
-		this.name = new SimpleStringProperty(name);
+	public Teilnehmer(String firstname, String lastname, String telephone, String email, Firma firma) {
+		this.firstname = new SimpleStringProperty(firstname);
+		this.lastname = new SimpleStringProperty(lastname);
+		this.telephone = new SimpleStringProperty(telephone);
 		this.email = new SimpleStringProperty(email);
 	}
 
-	public StringProperty getNameProperty() {
-		return name;
+	public StringProperty getFirstnameProperty() {
+		return firstname;
 	}
 	
-	public String getName() {
-		return name.get();
+	public String getFirstname() {
+		return firstname.get();
 	}
 
-	public void setName(String name) {
-		this.name.set(name);
+	public void setFirstname(String name) {
+		this.firstname.set(name);
 	}
 
 	public StringProperty getEmailProperty() {
@@ -56,6 +60,38 @@ public class Teilnehmer {
 
 	public void setEmail(String email) {
 		this.email.set(email);
+	}
+	
+	public String getLastname() {
+		return lastname.get();
+	}
+	
+	public void setLastname(String lastname) {
+		this.lastname.set(lastname);
+	}
+
+	public StringProperty getLastnameProperty() {
+		return lastname;
+	}
+
+	public void setLastname(StringProperty lastname) {
+		this.lastname = lastname;
+	}
+	
+	public String getTelephone() {
+		return telephone.get();
+	}
+	
+	public void setTelephone(String telephone) {
+		this.lastname.set(telephone);
+	}
+
+	public StringProperty getTelephoneProperty() {
+		return telephone;
+	}
+
+	public void setTelephone(StringProperty telephone) {
+		this.telephone = telephone;
 	}
 
 }
