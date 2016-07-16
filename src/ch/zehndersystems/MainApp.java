@@ -22,18 +22,43 @@ public class MainApp extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
     private ObservableList<Teilnehmer> teilnehmerData = FXCollections.observableArrayList();
+    private ObservableList<Firma> firmaData = FXCollections.observableArrayList();
 
+    
     public MainApp() {
         // Add some sample data
-        teilnehmerData.add(new Teilnehmer("Hans", "Muster", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
-        teilnehmerData.add(new Teilnehmer("Ruth", "Mueller", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
-        teilnehmerData.add(new Teilnehmer("Heinz", "Kurz", "0445201212", "hans.muster@bluewin.ch", new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
-        teilnehmerData.add(new Teilnehmer("Cornelia", "Meier", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
-        teilnehmerData.add(new Teilnehmer("Werner", "Meyer", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
-        teilnehmerData.add(new Teilnehmer("Lydia", "Kunz", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
-        teilnehmerData.add(new Teilnehmer("Anna", "Best", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
-        teilnehmerData.add(new Teilnehmer("Stefan", "Meier", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
-        teilnehmerData.add(new Teilnehmer("Martin", "Mueller", "0445201212", "hans.muster@bluewin.ch",new Firma("Test AG","Dorstrasse 36", "8000", "Zürich")));
+    	Firma firma1 = new Firma("Test 1","Dorstrasse 36", "8000", "Zürich");
+    	Firma firma2 = new Firma("Test 2","Dorstrasse 36", "8000", "Zürich");
+    	Firma firma3 = new Firma("Test 3","Dorstrasse 36", "8000", "Zürich");
+    	Firma firma4 = new Firma("Test 4","Dorstrasse 36", "8000", "Zürich");
+    	Firma firma5 = new Firma("Test 5","Dorstrasse 36", "8000", "Zürich");
+    	Firma firma6 = new Firma("Test 6","Dorstrasse 36", "8000", "Zürich");
+    	Firma firma7 = new Firma("Test 7","Dorstrasse 36", "8000", "Zürich");
+    	Firma firma8 = new Firma("Test 8","Dorstrasse 36", "8000", "Zürich");
+    	Firma firma9 = new Firma("Test 9","Dorstrasse 36", "8000", "Zürich");
+    	
+    	firmaData.add(firma1);
+    	firmaData.add(firma2);
+    	firmaData.add(firma3);
+    	firmaData.add(firma4);
+    	firmaData.add(firma5);
+    	firmaData.add(firma6);
+    	firmaData.add(firma7);
+    	firmaData.add(firma8);
+    	firmaData.add(firma9);
+
+    	
+        teilnehmerData.add(new Teilnehmer("Hans", "Muster", "0445201212", "hans.muster@bluewin.ch",firma1));
+        teilnehmerData.add(new Teilnehmer("Ruth", "Mueller", "0445201212", "hans.muster@bluewin.ch",firma2));
+        teilnehmerData.add(new Teilnehmer("Heinz", "Kurz", "0445201212", "hans.muster@bluewin.ch", firma3));
+        teilnehmerData.add(new Teilnehmer("Cornelia", "Meier", "0445201212", "hans.muster@bluewin.ch",firma4));
+        teilnehmerData.add(new Teilnehmer("Werner", "Meyer", "0445201212", "hans.muster@bluewin.ch",firma5));
+        teilnehmerData.add(new Teilnehmer("Lydia", "Kunz", "0445201212", "hans.muster@bluewin.ch",firma6));
+        teilnehmerData.add(new Teilnehmer("Anna", "Best", "0445201212", "hans.muster@bluewin.ch",firma7));
+        teilnehmerData.add(new Teilnehmer("Stefan", "Meier", "0445201212", "hans.muster@bluewin.ch",firma8));
+        teilnehmerData.add(new Teilnehmer("Martin", "Mueller", "0445201212", "hans.muster@bluewin.ch",firma9));
+        
+        
     }
 	
 	@Override
@@ -120,6 +145,10 @@ public class MainApp extends Application {
     
     public ObservableList<Teilnehmer> getTeilnehmerData() {
         return teilnehmerData;
+    }
+    
+    public ObservableList<Firma> getFirmaData() {
+        return firmaData;
     }
     
     public Stage getPrimaryStage() {

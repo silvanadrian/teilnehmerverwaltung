@@ -1,5 +1,6 @@
 package ch.zehndersystems.view;
 import ch.zehndersystems.MainApp;
+import ch.zehndersystems.model.Firma;
 import ch.zehndersystems.model.Teilnehmer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -17,6 +18,8 @@ public class TeilnehmerOverviewController {
     private TableColumn<Teilnehmer, String> lastNameColumn;
     @FXML
     private TableColumn<Teilnehmer, String> emailColumn;
+    @FXML
+    private TableColumn<Teilnehmer, Firma> firmaColumn;
 
     @FXML
     private Label firstNameLabel;
@@ -26,6 +29,8 @@ public class TeilnehmerOverviewController {
     private Label emailLabel;
     @FXML
     private Label telephoneLabel;
+    @FXML
+    private Label firmaLabel;
 
 
     private MainApp mainApp;
@@ -39,6 +44,8 @@ public class TeilnehmerOverviewController {
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().getFirstnameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().getLastnameProperty());
         emailColumn.setCellValueFactory(cellData -> cellData.getValue().getEmailProperty());
+        firmaColumn.setCellValueFactory(cellData -> cellData.getValue().getFirmaProperty());
+
         showTeilnehmerDetails(null);
         
         teilnehmerTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showTeilnehmerDetails(newValue));
@@ -110,12 +117,14 @@ public class TeilnehmerOverviewController {
             lastNameLabel.setText(teilnehmer.getLastname());
             telephoneLabel.setText(teilnehmer.getTelephone());
             emailLabel.setText(teilnehmer.getEmail());
+            firmaLabel.setText(teilnehmer.getFirma().getCorpName());
         } else {
             // Person is null, remove all the text.
             firstNameLabel.setText("");
             lastNameLabel.setText("");
             telephoneLabel.setText("");
             emailLabel.setText("");
+            firmaLabel.setText("");
         }
     }
     

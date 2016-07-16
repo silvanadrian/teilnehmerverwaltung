@@ -21,16 +21,19 @@
                   <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label prefHeight="17.0" prefWidth="85.0" text="Vorname" />
-                  <TextField fx:id="nameField" GridPane.columnIndex="1" />
+                  <TextField fx:id="firstnameField" GridPane.columnIndex="1" />
                   <Label text="Email" GridPane.rowIndex="2" />
                   <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label text="Nachname" GridPane.rowIndex="1" />
                   <Label text="Telefonnummer" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="lastnameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="telephoneField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Firma" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="firmaField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
                <BorderPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

@@ -1,5 +1,7 @@
 package ch.zehndersystems.view;
 
+import ch.zehndersystems.MainApp;
+import ch.zehndersystems.model.Firma;
 import ch.zehndersystems.model.Teilnehmer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -19,6 +21,10 @@ public class TeilnehmerEditDialogController {
     private TextField emailField;
     @FXML
     private TextField telephoneField;
+    @FXML
+    private ComboBox<Firma> firmaField;
+    
+    private MainApp mainApp  = new MainApp();
 
     private Stage dialogStage;
     private Teilnehmer teilnehmer;
@@ -39,11 +45,14 @@ public class TeilnehmerEditDialogController {
     
     public void setTeilnehmer(Teilnehmer teilnehmer) {
         this.teilnehmer = teilnehmer;
-
+        
+        System.out.println(teilnehmer.getFirstname());
         firstnameField.setText(teilnehmer.getFirstname());
         lastnameField.setText(teilnehmer.getLastname());
         emailField.setText(teilnehmer.getEmail());
         telephoneField.setText(teilnehmer.getTelephone());
+        firmaField.getItems().addAll(mainApp.getFirmaData());
+        firmaField.setValue(teilnehmer.getFirma());
     }
 
     public boolean isOkClicked() {
@@ -56,8 +65,9 @@ public class TeilnehmerEditDialogController {
         if (isInputValid()) {
             teilnehmer.setFirstname(firstnameField.getText());
             teilnehmer.setLastname(lastnameField.getText());
-            teilnehmer.setTelephone(telephoneField.getText());
             teilnehmer.setEmail(emailField.getText());
+            teilnehmer.setTelephone(telephoneField.getText());
+            teilnehmer.setFirma(firmaField.getValue());
 
 
             okClicked = true;
@@ -93,6 +103,9 @@ public class TeilnehmerEditDialogController {
         if (emailField.getText() == null || emailField.getText().length() == 0) {
             errorMessage += "Keine valide E-Mail Adresse!\n"; 
         }
+        if (firmaField.getValue() == null) {
+            errorMessage += "Keine valide Firma!\n"; 
+        }
 
 
         if (errorMessage.length() == 0) {
@@ -101,8 +114,8 @@ public class TeilnehmerEditDialogController {
             // Show the error message.
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
-            alert.setTitle("Invalid Fields");
-            alert.setHeaderText("Please correct invalid fields");
+            alert.setTitle("Ungültige Felder");
+            alert.setHeaderText("Bitte ungültige Felder korrigieren");
             alert.setContentText(errorMessage);
 
             alert.showAndWait();

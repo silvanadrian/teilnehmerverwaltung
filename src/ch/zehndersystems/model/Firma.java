@@ -95,6 +95,11 @@ public class Firma {
 	public void setCityProperty(StringProperty city) {
 		this.city = city;
 	}
+	
+    @Override
+    public String toString() {
+    	return this.getCorpName();
+    }
 
 
 }

@@ -91,6 +91,7 @@
                 <TableColumn fx:id="firstNameColumn" prefWidth="90.0" text="Vorname" />
                   <TableColumn fx:id="lastNameColumn" prefWidth="90.0" text="Nachname" />
                 <TableColumn fx:id="emailColumn" prefWidth="200.0" text="E-Mail" />
+                                    <TableColumn fx:id="firmaColumn" prefWidth="200.0" text="Firma" />
               </columns>
             </TableView>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -112,6 +113,7 @@
                                     <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
                                     <Label text="Vorname" />
@@ -122,6 +124,9 @@
                                     <Label text="Telefonnummer" GridPane.rowIndex="3" />
                                     <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Label fx:id="telephoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <Label />
+                                                      <Label text="Firma" GridPane.rowIndex="4" />
+                                                      <Label fx:id="firmaLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                  </children>
                               </GridPane>
                            </center>

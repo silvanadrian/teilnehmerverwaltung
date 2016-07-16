@@ -5,10 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
-import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -21,8 +20,7 @@ public class Teilnehmer {
 	private StringProperty lastname;
 	private StringProperty telephone;
 	private StringProperty email;
-	@ManyToOne
-	private Firma firma;
+	private SimpleObjectProperty<Firma> firma;
 	
 	/**
 	 * Default Constructor
@@ -36,6 +34,7 @@ public class Teilnehmer {
 		this.lastname = new SimpleStringProperty(lastname);
 		this.telephone = new SimpleStringProperty(telephone);
 		this.email = new SimpleStringProperty(email);
+		this.firma = new SimpleObjectProperty<>(firma);
 	}
 
 	public StringProperty getFirstnameProperty() {
@@ -83,7 +82,7 @@ public class Teilnehmer {
 	}
 	
 	public void setTelephone(String telephone) {
-		this.lastname.set(telephone);
+		this.telephone.set(telephone);
 	}
 
 	public StringProperty getTelephoneProperty() {
@@ -93,5 +92,22 @@ public class Teilnehmer {
 	public void setTelephone(StringProperty telephone) {
 		this.telephone = telephone;
 	}
+
+	public Firma getFirma() {
+		return firma.get();
+	}
+
+	public void setFirma(Firma firma) {
+		this.firma.set(firma);
+	}
+	
+	public SimpleObjectProperty<Firma> getFirmaProperty() {
+		return firma;
+	}
+	
+	public void setFirmaProperty(SimpleObjectProperty<Firma> firma) {
+		this.firma = firma;
+	}
+	
 
 }
