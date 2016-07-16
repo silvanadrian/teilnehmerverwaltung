@@ -6,17 +6,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zehndersystems.view.FirmaOverviewController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
 	<!-- TODO Add Nodes -->
     <children>
        <SplitPane dividerPositions="0.5" prefHeight="667.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <items>
-             <TableView fx:id="firmaTable">
+             <TableView>
                 <columns>
-                   <TableColumn fx:id="corpNameColumn" prefWidth="75.0" text="Firmenname" />
-                   <TableColumn fx:id="addressColumn" prefWidth="75.0" text="Adresse" />
-                  <TableColumn fx:id="zipColumn" prefWidth="75.0" text="PLZ" />
-                  <TableColumn fx:id="cityColumn" prefWidth="75.0" text="Sadt" />
+                   <TableColumn prefWidth="75.0" text="Kursnummer" />
+                   <TableColumn prefWidth="75.0" text="Datum" />
                 </columns>
              </TableView>
              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -27,17 +25,17 @@
                             <bottom>
                                <FlowPane>
                                   <children>
-                                     <Button mnemonicParsing="false" onAction="#handleEditFirma" text="Bearbeiten">
+                                     <Button mnemonicParsing="false" text="Bearbeiten">
                                         <FlowPane.margin>
                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                         </FlowPane.margin>
                                      </Button>
-                                     <Button mnemonicParsing="false" onAction="#handleNewFirma" text="Neu">
+                                     <Button mnemonicParsing="false" text="Neu">
                                         <FlowPane.margin>
                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                         </FlowPane.margin>
                                      </Button>
-                                     <Button mnemonicParsing="false" onAction="#handleDeleteFirma" text="Löschen">
+                                     <Button mnemonicParsing="false" text="Löschen">
                                         <FlowPane.margin>
                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                         </FlowPane.margin>
@@ -49,13 +47,9 @@
                                <GridPane BorderPane.alignment="CENTER">
                                   <children>
                                      <Label text="Name" />
-                                     <Label text="Adresse" GridPane.rowIndex="1" />
-                                     <Label fx:id="corpNameLabel" text="Label" GridPane.columnIndex="1" />
-                                     <Label fx:id="addressLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <Label text="Stadt" GridPane.rowIndex="2" />
-                                    <Label fx:id="cityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label text="PLZ" GridPane.rowIndex="3" />
-                                    <Label fx:id="zipLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                     <Label text="E-Mail" GridPane.rowIndex="1" />
+                                     <Label text="Label" GridPane.columnIndex="1" />
+                                     <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                   </children>
                                   <columnConstraints>
                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -64,8 +58,6 @@
                                   <rowConstraints>
                                      <RowConstraints maxHeight="80.0" minHeight="10.0" vgrow="SOMETIMES" />
                                      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                   </rowConstraints>
                                </GridPane>
                             </center>
@@ -81,3 +73,4 @@
        </SplitPane>
     </children>
 </AnchorPane>
+

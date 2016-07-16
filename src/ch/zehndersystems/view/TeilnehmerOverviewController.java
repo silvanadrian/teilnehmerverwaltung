@@ -1,6 +1,5 @@
 package ch.zehndersystems.view;
 import ch.zehndersystems.MainApp;
-import ch.zehndersystems.model.Firma;
 import ch.zehndersystems.model.Teilnehmer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -18,8 +17,6 @@ public class TeilnehmerOverviewController {
     private TableColumn<Teilnehmer, String> lastNameColumn;
     @FXML
     private TableColumn<Teilnehmer, String> emailColumn;
-    @FXML
-    private TableColumn<Teilnehmer, Firma> firmaColumn;
 
     @FXML
     private Label firstNameLabel;
@@ -44,10 +41,7 @@ public class TeilnehmerOverviewController {
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().getFirstnameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().getLastnameProperty());
         emailColumn.setCellValueFactory(cellData -> cellData.getValue().getEmailProperty());
-        firmaColumn.setCellValueFactory(cellData -> cellData.getValue().getFirmaProperty());
-
         showTeilnehmerDetails(null);
-        
         teilnehmerTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showTeilnehmerDetails(newValue));
     }
     

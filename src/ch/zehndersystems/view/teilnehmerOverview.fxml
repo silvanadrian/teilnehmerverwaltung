@@ -6,8 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zehndersystems.view.TeilnehmerOverviewController">   
-<children>
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zehndersystems.view.TeilnehmerOverviewController">
+	<!-- TODO Add Nodes -->
+	<children>
       <SplitPane dividerPositions="0.5" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
             <TableView fx:id="teilnehmerTable">
@@ -36,6 +37,7 @@
                                     <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
                                     <Label text="Vorname" />
@@ -46,6 +48,9 @@
                                     <Label text="Telefonnummer" GridPane.rowIndex="3" />
                                     <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Label fx:id="telephoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <Label />
+                                                      <Label text="Firma" GridPane.rowIndex="4" />
+                                                      <Label fx:id="firmaLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                  </children>
                               </GridPane>
                            </center>
@@ -79,4 +84,3 @@
       </SplitPane>
    </children>
 </AnchorPane>
-

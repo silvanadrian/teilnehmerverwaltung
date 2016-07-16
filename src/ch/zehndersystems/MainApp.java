@@ -5,8 +5,9 @@ import java.io.IOException;
 
 import ch.zehndersystems.model.Firma;
 import ch.zehndersystems.model.Teilnehmer;
+import ch.zehndersystems.view.FirmaEditDialogController;
+import ch.zehndersystems.view.RootLayoutController;
 import ch.zehndersystems.view.TeilnehmerEditDialogController;
-import ch.zehndersystems.view.TeilnehmerOverviewController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,7 +27,7 @@ public class MainApp extends Application {
 
     
     public MainApp() {
-        // Add some sample data
+        // Add Firmen
     	Firma firma1 = new Firma("Test 1","Dorstrasse 36", "8000", "Zürich");
     	Firma firma2 = new Firma("Test 2","Dorstrasse 36", "8000", "Zürich");
     	Firma firma3 = new Firma("Test 3","Dorstrasse 36", "8000", "Zürich");
@@ -36,7 +37,6 @@ public class MainApp extends Application {
     	Firma firma7 = new Firma("Test 7","Dorstrasse 36", "8000", "Zürich");
     	Firma firma8 = new Firma("Test 8","Dorstrasse 36", "8000", "Zürich");
     	Firma firma9 = new Firma("Test 9","Dorstrasse 36", "8000", "Zürich");
-    	
     	firmaData.add(firma1);
     	firmaData.add(firma2);
     	firmaData.add(firma3);
@@ -46,8 +46,7 @@ public class MainApp extends Application {
     	firmaData.add(firma7);
     	firmaData.add(firma8);
     	firmaData.add(firma9);
-
-    	
+    	//Add Some Teilnehmer
         teilnehmerData.add(new Teilnehmer("Hans", "Muster", "0445201212", "hans.muster@bluewin.ch",firma1));
         teilnehmerData.add(new Teilnehmer("Ruth", "Mueller", "0445201212", "hans.muster@bluewin.ch",firma2));
         teilnehmerData.add(new Teilnehmer("Heinz", "Kurz", "0445201212", "hans.muster@bluewin.ch", firma3));
@@ -58,17 +57,14 @@ public class MainApp extends Application {
         teilnehmerData.add(new Teilnehmer("Stefan", "Meier", "0445201212", "hans.muster@bluewin.ch",firma8));
         teilnehmerData.add(new Teilnehmer("Martin", "Mueller", "0445201212", "hans.muster@bluewin.ch",firma9));
         
-        
     }
 	
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Kursverwaltung Zehnder Systems");
+		this.primaryStage.setTitle("Teilnehmerverwaltung Zehnder Systems");
 		
 		initRootLayout();
-		
-		showKursverwaltungOverview();
 	}
 	
 	/**
@@ -81,7 +77,9 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
-
+            	
+            RootLayoutController controller = loader.getController();
+            controller.setMainApp(this);
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -90,27 +88,7 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
-    
-    /**
-     * Load Kursverwaltung Overview
-     */
-    public void showKursverwaltungOverview() {
-        try {
-            // Load Kursverwaltung overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/kursverwaltung.fxml"));
-            AnchorPane kursverwaltungOverview = (AnchorPane) loader.load();
-            
-            // Give the controller access to the main app.
-            TeilnehmerOverviewController controller = loader.getController();
-            controller.setMainApp(this);
-            
-            // Set kursverwaltung overview into the center of root layout.
-            rootLayout.setCenter(kursverwaltungOverview);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
     
     public boolean showTeilnehmerEditDialog(Teilnehmer teilnehmer) {
         try {
@@ -121,7 +99,7 @@ public class MainApp extends Application {
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit Person");
+            dialogStage.setTitle("Bearbeite Teilnehmer");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
@@ -131,6 +109,36 @@ public class MainApp extends Application {
             TeilnehmerEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setTeilnehmer(teilnehmer);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean showFirmaEditDialog(Firma firma) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/FirmaEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Bearbeite Firma");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set the person into the controller.
+            FirmaEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setFirma(firma);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

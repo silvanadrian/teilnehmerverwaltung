@@ -1,10 +1,15 @@
 package ch.zehndersystems.view;
 
 import ch.zehndersystems.MainApp;
-import ch.zehndersystems.model.Teilnehmer;
+
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 
 public class RootLayoutController {
+	
+	@FXML private TeilnehmerOverviewController teilnehmerTabPageController;
+	@FXML private FirmaOverviewController firmaTabPageController;
+
 	// Reference to the main application
     private MainApp mainApp;
     
@@ -16,6 +21,8 @@ public class RootLayoutController {
      */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
+        teilnehmerTabPageController.setMainApp(mainApp);
+        firmaTabPageController.setMainApp(mainApp);
     }
 
 
