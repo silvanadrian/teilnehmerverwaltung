@@ -72,6 +72,7 @@ public class FirmaOverviewController {
         boolean okClicked = mainApp.showFirmaEditDialog(tempFirma);
         if (okClicked) {
             mainApp.getFirmaData().add(tempFirma);
+            System.out.println(mainApp.getFirmaData());
         }
     }
 

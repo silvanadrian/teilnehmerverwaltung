@@ -12,8 +12,6 @@ import javafx.stage.Stage;
 
 public class TeilnehmerEditDialogController {
 	@FXML
-    private ComboBox salutation;
-	@FXML
     private TextField firstnameField;
 	@FXML
     private TextField lastnameField;
@@ -24,7 +22,7 @@ public class TeilnehmerEditDialogController {
     @FXML
     private ComboBox<Firma> firmaField;
     
-    private MainApp mainApp  = new MainApp();
+    private MainApp mainApp;
 
     private Stage dialogStage;
     private Teilnehmer teilnehmer;
@@ -45,13 +43,12 @@ public class TeilnehmerEditDialogController {
     
     public void setTeilnehmer(Teilnehmer teilnehmer) {
         this.teilnehmer = teilnehmer;
-        
-        System.out.println(teilnehmer.getFirstname());
+
         firstnameField.setText(teilnehmer.getFirstname());
         lastnameField.setText(teilnehmer.getLastname());
         emailField.setText(teilnehmer.getEmail());
         telephoneField.setText(teilnehmer.getTelephone());
-        firmaField.getItems().addAll(mainApp.getFirmaData());
+        firmaField.setItems(mainApp.getFirmaData());
         firmaField.setValue(teilnehmer.getFirma());
     }
 
@@ -81,6 +78,10 @@ public class TeilnehmerEditDialogController {
     @FXML
     private void handleCancel() {
         dialogStage.close();
+    }
+    
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
     }
 
     /**

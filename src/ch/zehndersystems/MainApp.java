@@ -57,6 +57,8 @@ public class MainApp extends Application {
         teilnehmerData.add(new Teilnehmer("Stefan", "Meier", "0445201212", "hans.muster@bluewin.ch",firma8));
         teilnehmerData.add(new Teilnehmer("Martin", "Mueller", "0445201212", "hans.muster@bluewin.ch",firma9));
         
+
+        
     }
 	
 	@Override
@@ -107,6 +109,7 @@ public class MainApp extends Application {
 
             // Set the person into the controller.
             TeilnehmerEditDialogController controller = loader.getController();
+            controller.setMainApp(this);
             controller.setDialogStage(dialogStage);
             controller.setTeilnehmer(teilnehmer);
 

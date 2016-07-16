@@ -3,7 +3,6 @@ package ch.zehndersystems.view;
 import ch.zehndersystems.MainApp;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 
 public class RootLayoutController {
 	
@@ -13,7 +12,6 @@ public class RootLayoutController {
 	// Reference to the main application
     private MainApp mainApp;
     
-
     /**
      * Is called by the main application to give a reference back to itself.
      * 

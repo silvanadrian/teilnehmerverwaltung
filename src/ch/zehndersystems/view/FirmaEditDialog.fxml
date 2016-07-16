@@ -25,11 +25,11 @@
                <children>
                   <Label prefHeight="17.0" prefWidth="85.0" text="Firmenname" />
                   <TextField fx:id="corpnameField" GridPane.columnIndex="1" />
-                  <Label text="PLZ" GridPane.rowIndex="2" />
-                  <TextField fx:id="zipField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label text="Adresse" GridPane.rowIndex="1" />
-                  <Label text="Stadt" GridPane.rowIndex="3" />
                   <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="PLZ" GridPane.rowIndex="2" />
+                  <TextField fx:id="zipField" GridPane.columnIndex="1" GridPane.rowIndex="2" /> 
+                  <Label text="Stadt" GridPane.rowIndex="3" /> 
                   <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
                <BorderPane.margin>

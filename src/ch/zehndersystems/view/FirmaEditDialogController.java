@@ -1,6 +1,5 @@
 package ch.zehndersystems.view;
 
-import ch.zehndersystems.MainApp;
 import ch.zehndersystems.model.Firma;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -18,9 +17,6 @@ public class FirmaEditDialogController {
     private TextField zipField;
     @FXML
     private TextField cityField;
-
-    
-    private MainApp mainApp;
 
     private Stage dialogStage;
     private Firma firma;
