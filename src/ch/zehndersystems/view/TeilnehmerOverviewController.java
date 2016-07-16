@@ -26,6 +26,8 @@ public class TeilnehmerOverviewController {
     private Label emailLabel;
     @FXML
     private Label telephoneLabel;
+    @FXML
+    private Label firmaLabel;
 
 
     private MainApp mainApp;
@@ -109,12 +111,14 @@ public class TeilnehmerOverviewController {
             lastNameLabel.setText(teilnehmer.getLastname());
             telephoneLabel.setText(teilnehmer.getTelephone());
             emailLabel.setText(teilnehmer.getEmail());
+            firmaLabel.setText(teilnehmer.getFirma().getCorpName());
         } else {
             // Person is null, remove all the text.
             firstNameLabel.setText("");
             lastNameLabel.setText("");
             telephoneLabel.setText("");
             emailLabel.setText("");
+            firmaLabel.setText("");
         }
     }
     
