@@ -88,6 +88,13 @@ public class MainApp extends Application {
         }
     }
 
+    /**
+     * 
+     * Show Teilnehmer Edit Dialog
+     * 
+     * @param teilnehmer
+     * @return
+     */
     
     public boolean showTeilnehmerEditDialog(Teilnehmer teilnehmer) {
         try {
@@ -119,6 +126,14 @@ public class MainApp extends Application {
             return false;
         }
     }
+    
+    /**
+     * 
+     * Show Firma Edit Dialog
+     * 
+     * @param firma
+     * @return
+     */
     
     public boolean showFirmaEditDialog(Firma firma) {
         try {
