@@ -55,10 +55,7 @@ public class MainApp extends Application {
         teilnehmerData.add(new Teilnehmer("Lydia", "Kunz", "0445201212", "hans.muster@bluewin.ch",firma6));
         teilnehmerData.add(new Teilnehmer("Anna", "Best", "0445201212", "hans.muster@bluewin.ch",firma7));
         teilnehmerData.add(new Teilnehmer("Stefan", "Meier", "0445201212", "hans.muster@bluewin.ch",firma8));
-        teilnehmerData.add(new Teilnehmer("Martin", "Mueller", "0445201212", "hans.muster@bluewin.ch",firma9));
-        
-
-        
+        teilnehmerData.add(new Teilnehmer("Martin", "Mueller", "0445201212", "hans.muster@bluewin.ch",firma9)); 
     }
 	
 	@Override
