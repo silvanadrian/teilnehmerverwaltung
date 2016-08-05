@@ -1,29 +1,21 @@
 package ch.zehndersystems.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 
-@Entity
-@Table(name = "\"firma\"")
+
 public class Firma {
-	@Id
-	@GeneratedValue
+	
 	private long id;
-	@Transient
+	
 	private StringProperty corpName;
-	@Transient
+
 	private StringProperty address;
-	@Transient
 	private StringProperty zipcode;
-	@Transient
 	private StringProperty city;
 	
 	public Firma() {
