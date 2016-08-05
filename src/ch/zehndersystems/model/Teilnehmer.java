@@ -9,8 +9,6 @@ import javafx.beans.property.StringProperty;
 
 
 public class Teilnehmer {
-
-	private long id;
 	private StringProperty firstname;
 	private StringProperty lastname;
 	private StringProperty telephone;
@@ -23,7 +21,15 @@ public class Teilnehmer {
 	public Teilnehmer(){
 		this(null,null,null,null, null);
 	}
-	
+	/**
+	 * Teilnehmer Constructor
+	 * 
+	 * @param firstname
+	 * @param lastname
+	 * @param telephone
+	 * @param email
+	 * @param firma
+	 */
 	public Teilnehmer(String firstname, String lastname, String telephone, String email, Firma firma) {
 		this.firstname = new SimpleStringProperty(firstname);
 		this.lastname = new SimpleStringProperty(lastname);

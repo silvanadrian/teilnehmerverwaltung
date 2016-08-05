@@ -9,19 +9,27 @@ import javafx.beans.property.StringProperty;
 
 
 public class Firma {
-	
-	private long id;
-	
 	private StringProperty corpName;
 
 	private StringProperty address;
 	private StringProperty zipcode;
 	private StringProperty city;
 	
+	/**
+	 * Default Constructor
+	 */
 	public Firma() {
 		this(null,null,null,null);
 	}
 	
+	/**
+	 * Firma Constructor 
+	 *
+	 * @param corpname
+	 * @param address
+	 * @param zipcode
+	 * @param city
+	 */
 	public Firma(String corpname, String address, String zipcode, String city) {
 		this.setCorpNameProperty(new SimpleStringProperty(corpname));
 		this.setAddressProperty(new SimpleStringProperty(address));

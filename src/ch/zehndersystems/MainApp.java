@@ -46,7 +46,7 @@ public class MainApp extends Application {
     	firmaData.add(firma7);
     	firmaData.add(firma8);
     	firmaData.add(firma9);
-    	//Add Some Teilnehmer
+    	//Add Teilnehmer
         teilnehmerData.add(new Teilnehmer("Hans", "Muster", "0445201212", "hans.muster@bluewin.ch",firma1));
         teilnehmerData.add(new Teilnehmer("Ruth", "Mueller", "0445201212", "hans.muster@bluewin.ch",firma2));
         teilnehmerData.add(new Teilnehmer("Heinz", "Kurz", "0445201212", "hans.muster@bluewin.ch", firma3));
@@ -107,7 +107,7 @@ public class MainApp extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
-            // Set the person into the controller.
+            // Set the Teilnehmer into the controller.
             TeilnehmerEditDialogController controller = loader.getController();
             controller.setMainApp(this);
             controller.setDialogStage(dialogStage);
@@ -138,7 +138,7 @@ public class MainApp extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
-            // Set the person into the controller.
+            // Set the Firma into the controller.
             FirmaEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setFirma(firma);
