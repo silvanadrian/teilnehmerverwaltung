@@ -61,7 +61,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Teilnehmerverwaltung Zehnder Systems");
+		this.primaryStage.setTitle("Teilnehmerverwaltung");
 		
 		initRootLayout();
 	}
